@@ -3,8 +3,9 @@
  * Date: 18/08/01
  */
 import FeButton from './button/index.js'
+import FeTag from './tag/index.js'
 
-const components = [FeButton]
+const components = [FeButton, FeTag]
 
 const install = function (Vue) {
   if (install.installed) return

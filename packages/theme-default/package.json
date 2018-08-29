@@ -8,10 +8,9 @@
     "build": "gulp build"
   },
   "keywords": [
-    "vv-ui",
     "theme"
   ],
-  "author": "monkeywang",
+  "author": "forrest",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",

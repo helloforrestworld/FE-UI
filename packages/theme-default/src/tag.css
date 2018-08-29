@@ -1,6 +1,5 @@
-@import "common/var.css";
-
-@b w {
+@import 'common/var.css';
+@b fe {
   @e tag {
     display: inline-block;
     padding: 1px 8px;
@@ -17,16 +16,15 @@
       font-size: 12px;
       margin-right: 2px;
     }
-    @m default{
+    @m default {
       color: #3f536e;
       border-color: #dfdfdf;
       background-color: #f7f7f7;
     }
-    @m success{
+    @m success {
       background-color: var(--tag-success-fill);
       border-color: var(--tag-success-border);
       color: var(--tag-success-color);
-
       & .el-tag__close:hover {
         background-color: var(--tag-success-color);
         color: var(--color-white);
@@ -45,7 +43,6 @@
       background-color: var(--tag-warning-fill);
       border-color: var(--tag-warning-border);
       color: var(--tag-warning-color);
-
       &.el-tag__close:hover {
         background-color: var(--tag-warning-color);
         color: var(--color-white);
@@ -55,7 +52,6 @@
       background-color: var(--tag-danger-fill);
       border-color: var(--tag-danger-border);
       color: var(--tag-danger-color);
-
       & .el-tag__close:hover {
         background-color: var(--tag-danger-color);
         color: var(--color-white);
