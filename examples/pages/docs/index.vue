@@ -3,28 +3,32 @@
     <aside id="docs__aside">
       <div class="aside__cell">
         <h2 class="aside__header fs-16  pl-10">组件</h2>
-        <div class="aside__link fs-14 pl-16">
-          <router-link class="aside-label" to="/button">按钮</router-link>
-        </div>
-        <div class="aside__link fs-14 pl-16">
-          <router-link class="aside-label" to="/tag">标签</router-link>
+        <div class="aside__link fs-14 pl-16" v-for="link in routerData" :key="link.route">
+          <router-link class="aside-label" exact :to="link.route" active-class="aside--active">{{link.name}}</router-link>
         </div>
       </div>
     </aside>
     <main id="docs__main">
-      <router-view/>
+      <router-view />
     </main>
   </section>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      routerData: [
+        {name: '按钮', route: '/'},
+        {name: '标签', route: '/tag'}
+      ]
+    }
+  }
 }
 </script>
 
 <style scoped lang="less">
-@import '../../assets/less/var.less';
+@import '~var.less';
 #docs {
   width: 100%;
   height: 100%;
@@ -48,6 +52,9 @@ export default {
         .aside-label {
           display: block;
           color: @color-black;
+          &.aside--active {
+            color: @color-primary;
+          }
         }
       }
     }

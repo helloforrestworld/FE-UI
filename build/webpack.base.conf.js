@@ -7,7 +7,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 const MarkdownItContainer = require('markdown-it-container')
 const striptags = require('./strip-tags')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -36,9 +36,10 @@ module.exports = {
         : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', 'less'],
     alias: {
-      '@': resolve('examples')
+      '@': resolve('examples'),
+      var: resolve('examples/assets/less/var.less')
     }
   },
   module: {
@@ -87,7 +88,7 @@ module.exports = {
         loader: 'vue-markdown-loader',
         options: {
           preprocess: (MarkdownIt, source) => {
-            MarkdownIt.renderer.rules.table_open = function () {
+            MarkdownIt.renderer.rules.table_open = function() {
               return '<table class="table">'
             }
             MarkdownIt.renderer.rules.fence = utils.wrapCustomClass(
@@ -107,7 +108,7 @@ module.exports = {
 
             // ```code`` 给这种样式加个class code_inline
             const code_inline = MarkdownIt.renderer.rules.code_inline
-            MarkdownIt.renderer.rules.code_inline = function (...args) {
+            MarkdownIt.renderer.rules.code_inline = function(...args) {
               args[0][args[1]].attrJoin('class', 'code_inline')
               return code_inline(...args)
             }
@@ -119,7 +120,7 @@ module.exports = {
               'demo',
               {
                 validate: params => params.trim().match(/^demo\s*(.*)$/),
-                render: function (tokens, idx) {
+                render: function(tokens, idx) {
                   var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
 
                   if (tokens[idx].nesting === 1) {

@@ -28,7 +28,7 @@ export default new Router({
       component: Docs,
       children: [
         {
-          path: '/button',
+          path: '/',
           name: 'button',
           component: Button
         },

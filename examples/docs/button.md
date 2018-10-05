@@ -116,21 +116,21 @@
 设置`icon`属性即可，icon 的列表可以参考 VV-UI 的 icon 组件，也可以设置在文字右边的 icon ，只要使用`i`标签即可，可以使用自定义图标。
 
 <div class="demo-block">
-  <fe-button icon="w-icon-tag" type="primary"></fe-button>
-  <fe-button icon="w-icon-close" type="primary"></fe-button>
-  <fe-button icon="w-icon-smile" type="primary"></fe-button>
-  <fe-button icon="w-icon-search" type="primary">搜索</fe-button>
-  <fe-button icon="w-icon-cloudfill" type="primary">下载</fe-button>
+  <fe-button icon="fe-icon-tag" type="primary"></fe-button>
+  <fe-button icon="fe-icon-close" type="primary"></fe-button>
+  <fe-button icon="fe-icon-smile" type="primary"></fe-button>
+  <fe-button icon="fe-icon-search" type="primary">搜索</fe-button>
+  <fe-button icon="fe-icon-cloudfill" type="primary">下载</fe-button>
 </div>
 
 ::: demo
 
 ```html
-<fe-button icon="w-icon-tag" type="primary"></fe-button>
-<fe-button icon="w-icon-close" type="primary"></fe-button>
-<fe-button icon="w-icon-smile" type="primary"></fe-button>
-<fe-button icon="w-icon-search" type="primary">搜索</fe-button>
-<fe-button icon="w-icon-cloudfill" type="primary">下载</fe-button>
+<fe-button icon="fe-icon-tag" type="primary"></fe-button>
+<fe-button icon="fe-icon-close" type="primary"></fe-button>
+<fe-button icon="fe-icon-smile" type="primary"></fe-button>
+<fe-button icon="fe-icon-search" type="primary">搜索</fe-button>
+<fe-button icon="fe-icon-cloudfill" type="primary">下载</fe-button>
 ```
 
 :::
