@@ -9,9 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "vue": "^2.5.17"
+    "vue": "^2.5.2"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.10.3"
+    "@vue/component-compiler-utils": "^2.3.0",
+    "less": "^3.8.1",
+    "parcel-bundler": "^1.10.3",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
