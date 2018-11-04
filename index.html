@@ -6,20 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>gulu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    :root {
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+    }
+    #app {
+      margin:20px;
+    }
+    body {
+      font-size: var(--font-size);
+    }
+  </style>
+  <style>
+    .fe-button {
+      font-size: var(--font-size);
+      height: var(--button-height);
+      padding: 0 1em;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--border-color);
+      background: var(--button-bg);
+    }
+    .fe-button:hover {
+      border-color: var(--border-color-hover);
+    }
+    .fe-button:active {
+      background-color: var(--button-active-bg);
+    }
+    .fe-button:focus {
+      outline: none;
+    }
+  </style>
 </head>
 
 <body>
   <div id="app">
-    {{message}}
+    <fe-button></fe-button>
   </div>
   <script src="./node_modules/vue/dist/vue.min.js"></script>
+  <script src="./button.js"></script>
   <script>
     new Vue({
       el: '#app',
       data() {
-        return {
-          message: 'world'
-        }
+        return {}
       }
     })
   </script>
