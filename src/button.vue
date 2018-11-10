@@ -1,6 +1,7 @@
 <template>
   <button class="fe-button" :class="{[`icon-${iconPosition}`]: true}">
     <fe-icon v-if="icon" :name="icon"></fe-icon>
+    <fe-icon name="loading" class="spinning"></fe-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -24,6 +25,10 @@ export default {
 </script>
 
 <style lang="less">
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 .fe-button {
   display: inline-flex;
   justify-content: center;
@@ -60,6 +65,9 @@ export default {
     > .content {
       order: 1;
     }
+  }
+  .spinning {
+    animation: spin 1.5s infinite linear;
   }
 }
 </style>
