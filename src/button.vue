@@ -1,7 +1,9 @@
 <template>
-  <button class="fe-button" :class="{[`icon-${iconPosition}`]: true}">
-    <fe-icon v-if="icon" :name="icon"></fe-icon>
-    <fe-icon name="loading" class="spinning"></fe-icon>
+  <button class="fe-button" :class="{[`icon-${iconPosition}`]: true}"
+    @click="$emit('click')"
+  >
+    <fe-icon v-if="loading" name="loading" class="spinning"></fe-icon>
+    <fe-icon v-else-if="icon" :name="icon"></fe-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -19,6 +21,10 @@ export default {
       validator (value) {
         return value === 'left' || value === 'right'
       }
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   }
 }

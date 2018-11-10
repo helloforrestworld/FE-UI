@@ -6,5 +6,10 @@ Vue.component('fe-button', Button)
 Vue.component('fe-icon', icon)
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  data() {
+    return {
+      loading1: false
+    }
+  },
 })
