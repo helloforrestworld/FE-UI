@@ -1,8 +1,6 @@
 <template>
   <button class="fe-button" :class="{[`icon-${iconPosition}`]: true}">
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#icon-${icon}`"></use>
-    </svg>
+    <fe-icon v-if="icon" :name="icon"></fe-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -46,7 +44,7 @@ export default {
   &:focus {
     outline: none;
   }
-  > .icon {
+  > .fe-icon {
     order: 1;
     margin-right: .3em;
   }
@@ -54,7 +52,7 @@ export default {
     order: 2;
   }
   &.icon-right {
-    > .icon {
+    > .fe-icon {
       order: 2;
       margin-right: 0;
       margin-left: 0.3em;
