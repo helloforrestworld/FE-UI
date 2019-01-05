@@ -1,17 +1,19 @@
 {
-  "name": "gulu",
-  "version": "1.0.0",
+  "name": "fe-ui-test01",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev-test": "parcel watch tests/* --no-cache & karma start",
     "test": "parcel build tests/* --no-cache --no-minify && karma start --single-run",
-    "start": "parcel index.html --no-cache"
+    "start": "parcel index.html --no-cache",
+    "pb": "npm publish"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@vue/test-utils": "^1.0.0-beta.28",
+    "src": "^1.1.2",
     "vue": "^2.5.2",
     "vue-hot-reload-api": "^2.3.1"
   },
