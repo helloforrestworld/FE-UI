@@ -5,7 +5,7 @@
     <fe-icon v-if="loading" name="loading" class="spinning"></fe-icon>
     <fe-icon v-else-if="icon" :name="icon"></fe-icon>
     <div class="content">
-      <slot></slot>
+      <slot/>
     </div>
   </button>
 </template>
