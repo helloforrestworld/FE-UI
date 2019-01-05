@@ -11,6 +11,8 @@
 </template>
 
 <script>
+import Icon from './icon'
+
 export default {
   name: 'fe-button',
   props: {
@@ -26,6 +28,9 @@ export default {
       type: Boolean,
       default: false
     }
+  },
+  components: {
+    feIcon: Icon
   }
 }
 </script>
