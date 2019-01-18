@@ -25,34 +25,44 @@
       body {
         font-size: var(--font-size);
       }
+      .box {
+        margin: 20px;
+      }
     </style>
   </head>
 
   <body>
     <div id="app">
       <h1>FE-UI</h1>
-      <h2>按钮组件</h2>
-      <fe-button>普通按钮</fe-button>
-      <fe-button icon="set">图标按钮</fe-button>
-      <fe-button icon="set" icon-position="right">图标右侧</fe-button>
-      <fe-button
-        icon="download"
-        icon-position="right"
-        :loading="loading1"
-        @click="loading1 = !loading1"
-        >点击loading</fe-button
-      >
-      <br />
-      <br />
-      <fe-button-group>
-        <fe-button icon="left">上一页</fe-button>
-        <fe-button>普通</fe-button>
-        <fe-button icon="right" icon-position="right">下一页</fe-button>
-      </fe-button-group>
-      <h2>输入框</h2>
-      <fe-input></fe-input>
+      <div class="box">
+        <h2>按钮组件</h2>
+        <fe-button>普通按钮</fe-button>
+        <fe-button icon="set">图标按钮</fe-button>
+        <fe-button icon="set" icon-position="right">图标右侧</fe-button>
+        <fe-button
+          icon="download"
+          icon-position="right"
+          :loading="loading1"
+          @click="loading1 = !loading1"
+          >点击loading</fe-button
+        >
+        <br/>
+        <br/>
+        <fe-button-group>
+          <fe-button icon="left">上一页</fe-button>
+          <fe-button>普通</fe-button>
+          <fe-button icon="right" icon-position="right">下一页</fe-button>
+        </fe-button-group>
+      </div>
+
+      <div class="box">
+        <h2>输入框</h2>
+        <fe-input value="文本输入框"></fe-input>
+        <fe-input value="禁用状态" disabled></fe-input>
+        <fe-input value="" error="错误信息"></fe-input>
+      </div>
     </div>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_913020_im7f8e7x8u7.js"></script>
+    <script src="//at.alicdn.com/t/font_913020_82ib72tavcm.js"></script>
   </body>
 </html>

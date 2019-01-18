@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 .fe-button-group {
   display: inline-flex;
   vertical-align: middle;

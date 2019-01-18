@@ -10,9 +10,10 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 .fe-icon {
   width: 1em;
   height: 1em;
+  vertical-align: middle;
 }
 </style>

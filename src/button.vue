@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
