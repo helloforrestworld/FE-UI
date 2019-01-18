@@ -1,6 +1,11 @@
 <template>
   <div class="fe-wrapper" :class="{'error': error}">
-    <input :disabled="disabled" :value="value" type="text" placeholder="" placeholder-class=""/>
+    <input :disabled="disabled" :value="value" type="text" placeholder="" placeholder-class=""
+      @change="$emit('change', $event.target.value, $event)"
+      @input="$emit('input', $event.target.value, $event)"
+      @blur="$emit('blur', $event.target.value, $event)"
+      @focus="$emit('focus', $event.target.value, $event)"
+    />
     <template v-if="error">
       <fe-icon name="error" class="error-icon"></fe-icon>
       <span class="error-msg">{{error}}</span>
