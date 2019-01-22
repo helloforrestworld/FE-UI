@@ -18,6 +18,8 @@ module.exports = function (config) {
 
     preprocessors: {},
 
+    reporters: ['progress'],
+
     port: 9876,
 
     colors: true,

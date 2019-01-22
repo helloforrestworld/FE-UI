@@ -16,5 +16,5 @@ new Vue({
       loading1: false
     }
   },
-  methods: {},
+  methods: {}
 })

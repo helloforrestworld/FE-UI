@@ -11,9 +11,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.fe-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-}
+  .fe-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+  }
 </style>
