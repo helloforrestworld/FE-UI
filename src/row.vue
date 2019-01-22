@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="{marginLeft: -gutter + 'px'}">
+  <div class="fe-row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
@@ -13,12 +13,20 @@
       this.$children.forEach((vm) => {
         vm.gutter = this.gutter
       })
+    },
+    computed: {
+      rowStyle() {
+        let {gutter} = this
+        return {
+          marginLeft: -gutter + 'px'
+        }
+      }
     }
   }
 </script>
 
 <style scoped lang="less">
-  .row {
+  .fe-row {
     display: flex;
   }
 </style>
