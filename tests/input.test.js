@@ -30,6 +30,15 @@ describe('input.vue', () => {
       const inputElement = wrapper.find('input')
       expect(inputElement.element.getAttribute('disabled')).to.equal('disabled')
     })
+    it('设置placeholder.', () => {
+      const wrapper = mount(Input, {
+        propsData: {
+          placeholder: '请输入文本'
+        }
+      })
+      const inputElement = wrapper.find('input')
+      expect(inputElement.element.getAttribute('placeholder')).to.equal('请输入文本')
+    })
     it('设置error.', () => {
       const wrapper = mount(Input, {
         propsData: {

@@ -1,6 +1,6 @@
 <template>
   <div class="fe-wrapper" :class="{'error': error}">
-    <input :disabled="disabled" :value="value" type="text" placeholder="" placeholder-class=""
+    <input :disabled="disabled" :value="value" type="text" :placeholder="placeholder"
       @change="$emit('change', $event.target.value, $event)"
       @input="$emit('input', $event.target.value, $event)"
       @blur="$emit('blur', $event.target.value, $event)"
@@ -24,7 +24,8 @@ export default {
       type: Boolean,
       default: false
     },
-    error: String
+    error: String,
+    placeholder: String
   }
 }
 </script>
