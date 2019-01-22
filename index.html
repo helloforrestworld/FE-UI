@@ -21,6 +21,25 @@
       .box {
         margin: 20px;
       }
+      .col-inner {
+        background: skyblue;
+        height: 100%;
+        width: 100%;
+      }
+      .row-box .row {
+        margin-bottom: 20px;
+      }
+      .row-box .row .col .col-inner{
+        background: #3D8FEE;
+        height: 40px;
+        font-size: 24px;
+        color: #fff;
+        line-height: 40px;
+        text-align: center;
+      }
+      .row-box .row .col:nth-child(2n) .col-inner {
+        background: #7CB8FF;
+      }
     </style>
   </head>
 
@@ -39,8 +58,8 @@
           @click="loading1 = !loading1"
           >点击loading</fe-button
         >
-        <br/>
-        <br/>
+        <br />
+        <br />
         <fe-button-group>
           <fe-button icon="left">上一页</fe-button>
           <fe-button>普通</fe-button>
@@ -57,19 +76,36 @@
 
       <div class="box">
         <h2>网格</h2>
-        <fe-row>
-          <fe-col span="12">12</fe-col>
-          <fe-col span="12">12</fe-col>
-        </fe-row>
-        <fe-row>
-          <fe-col span="8">8</fe-col>
-          <fe-col span="8">8</fe-col>
-          <fe-col span="8">8</fe-col>
-        </fe-row>
-        <fe-row>
-          <fe-col span="2">2</fe-col>
-          <fe-col span="22">22</fe-col>
-        </fe-row>
+        <div class="row-box">
+          <fe-row>
+            <fe-col span="12"> <div class="col-inner">12</div> </fe-col>
+            <fe-col span="12"> <div class="col-inner">12</div> </fe-col>
+          </fe-row>
+          <fe-row>
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+          </fe-row>
+          <fe-row>
+            <fe-col span="2"> <div class="col-inner">2</div> </fe-col>
+            <fe-col span="22"> <div class="col-inner">22</div> </fe-col>
+          </fe-row>
+
+          <br />
+          <fe-row :gutter="20">
+            <fe-col span="12"> <div class="col-inner">12</div> </fe-col>
+            <fe-col span="12"> <div class="col-inner">12</div> </fe-col>
+          </fe-row>
+          <fe-row :gutter="20">
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+            <fe-col span="8"> <div class="col-inner">8</div> </fe-col>
+          </fe-row>
+          <fe-row :gutter="20">
+            <fe-col span="2"> <div class="col-inner">2</div> </fe-col>
+            <fe-col span="22"> <div class="col-inner">22</div> </fe-col>
+          </fe-row>
+        </div>
       </div>
     </div>
     <script src="./src/app.js"></script>
