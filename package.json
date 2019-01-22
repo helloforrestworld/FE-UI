@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev-test": "parcel watch tests/* --no-cache & karma start",
-    "test": "parcel build tests/* --no-cache --no-minify && karma start --single-run",
-    "start": "parcel index.html --no-cache",
+    "dev-test": "npx parcel watch tests/* --no-cache & karma start",
+    "test": "npx parcel build tests/* --no-cache --no-minify && karma start --single-run",
+    "start": "npx parcel index.html --no-cache",
     "pb": "npm publish"
   },
   "author": "",

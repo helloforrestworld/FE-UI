@@ -45,65 +45,21 @@ describe('input.vue', () => {
 
   // 测试input事件
   describe('事件', () => {
-    it('change事件.', () => {
-      const wrapper = mount(Input, {
-        propsData: {
-          error: '错误'
-        }
-      })
-      const callback = sinon.fake()
-      wrapper.vm.$on('change', callback)
+    it('change/input/blur/focus事件.', () => {
+      ['change', 'input', 'blur', 'focus'].forEach((eventName) => {
+        const wrapper = mount(Input, {
+          propsData: {}
+        })
+        const callback = sinon.fake()
+        wrapper.vm.$on(eventName, callback)
 
-      // 触发chang事件
-      let event = new Event('change')
-      let inputElement = wrapper.find('input').element
-      inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith('', event)
-    })
-    it('input事件.', () => {
-      const wrapper = mount(Input, {
-        propsData: {
-          error: '错误'
-        }
+        // 触发chang事件
+        let event = new Event(eventName)
+        let inputElement = wrapper.find('input').element
+        inputElement.dispatchEvent(event)
+        console.log('eventName: ' + eventName)
+        expect(callback).to.have.been.calledWith('', event)
       })
-      const callback = sinon.fake()
-      wrapper.vm.$on('input', callback)
-
-      // 触发chang事件
-      let event = new Event('input')
-      let inputElement = wrapper.find('input').element
-      inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith('', event)
-    })
-    it('blur事件.', () => {
-      const wrapper = mount(Input, {
-        propsData: {
-          error: '错误'
-        }
-      })
-      const callback = sinon.fake()
-      wrapper.vm.$on('blur', callback)
-
-      // 触发chang事件
-      let event = new Event('blur')
-      let inputElement = wrapper.find('input').element
-      inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith('', event)
-    })
-    it('focus事件.', () => {
-      const wrapper = mount(Input, {
-        propsData: {
-          error: '错误'
-        }
-      })
-      const callback = sinon.fake()
-      wrapper.vm.$on('focus', callback)
-
-      // 触发chang事件
-      let event = new Event('focus')
-      let inputElement = wrapper.find('input').element
-      inputElement.dispatchEvent(event)
-      expect(callback).to.have.been.calledWith('', event)
     })
   })
 })
