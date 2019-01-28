@@ -29,7 +29,7 @@
         type: Object,
         validator
       },
-      narowPc: {
+      narrowPc: {
         type: Object,
         validator
       },
@@ -55,19 +55,19 @@
         }
       },
       colClass() {
-        let {span, offset, phone, ipad, narowPc, pc, widePc} = this
+        let {span, offset, phone, ipad, narrowPc, pc, widePc} = this
         return [
           span && `fe-col-${span}`,
           offset && `fe-offset-${offset}`,
           ...(phone ? [span && `fe-col-phone-${phone.span}`]: []),
           ...(phone ? [offset && `fe-col-phone-${phone.offset}`]: []),
+          ...(ipad ? [span && `fe-col-ipad-${ipad.span}`]: []),
           ...(ipad ? [offset && `fe-col-ipad-${ipad.offset}`]: []),
-          ...(ipad ? [offset && `fe-col-ipad-${ipad.offset}`]: []),
-          ...(narowPc ? [offset && `fe-col-narowPc-${narowPc.offset}`]: []),
-          ...(narowPc ? [offset && `fe-col-narowPc-${narowPc.offset}`]: []),
+          ...(narrowPc ? [span && `fe-col-narrowPc-${narrowPc.span}`]: []),
+          ...(narrowPc ? [offset && `fe-col-narrowPc-${narrowPc.offset}`]: []),
+          ...(pc ? [span && `fe-col-pc-${pc.span}`]: []),
           ...(pc ? [offset && `fe-col-pc-${pc.offset}`]: []),
-          ...(pc ? [offset && `fe-col-pc-${pc.offset}`]: []),
-          ...(widePc ? [offset && `fe-col-widePc-${widePc.offset}`]: []),
+          ...(widePc ? [span && `fe-col-widePc-${widePc.span}`]: []),
           ...(widePc ? [offset && `fe-col-widePc-${widePc.offset}`]: [])
         ]
       }
@@ -98,7 +98,7 @@
   }
   .offset-loop(@span, 1);
 
-  @media (max-width: 576) {
+  @media (max-width: 576px) {
     .col-loop(@len, @i:1) when (@i <= @len) {
       .fe-col-phone-@{i} {
         width: (@i / 24px) * 100%;
@@ -134,14 +134,14 @@
 
   @media (min-width: 759px) and (max-width: 992px) {
     .col-loop(@len, @i:1) when (@i <= @len) {
-      .fe-col-narowPc-@{i} {
+      .fe-col-narrowPc-@{i} {
         width: (@i / 24px) * 100%;
       }
       .col-loop(@len, (@i + 1));
     }
     .col-loop(@span, 1);
     .offset-loop(@len, @i:1) when (@i <= @len) {
-      .fe-offset-narowPc-@{i} {
+      .fe-offset-narrowPc-@{i} {
         margin-left: (@i / 24px) * 100%;
       }
       .offset-loop(@len, (@i + 1));
