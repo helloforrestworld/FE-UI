@@ -55,12 +55,10 @@
         }
       },
       colClass() {
-        let {span, offset, phone, ipad, narrowPc, pc, widePc} = this
+        let {span, offset, ipad, narrowPc, pc, widePc, extraPc} = this
         return [
           span && `fe-col-${span}`,
           offset && `fe-offset-${offset}`,
-          ...(phone ? [span && `fe-col-phone-${phone.span}`]: []),
-          ...(phone ? [offset && `fe-col-phone-${phone.offset}`]: []),
           ...(ipad ? [span && `fe-col-ipad-${ipad.span}`]: []),
           ...(ipad ? [offset && `fe-col-ipad-${ipad.offset}`]: []),
           ...(narrowPc ? [span && `fe-col-narrowPc-${narrowPc.span}`]: []),
@@ -68,7 +66,9 @@
           ...(pc ? [span && `fe-col-pc-${pc.span}`]: []),
           ...(pc ? [offset && `fe-col-pc-${pc.offset}`]: []),
           ...(widePc ? [span && `fe-col-widePc-${widePc.span}`]: []),
-          ...(widePc ? [offset && `fe-col-widePc-${widePc.offset}`]: [])
+          ...(widePc ? [offset && `fe-col-widePc-${widePc.offset}`]: []),
+          ...(extraPc ? [span && `fe-col-extraPc-${extraPc.span}`]: []),
+          ...(extraPc ? [offset && `fe-col-extraPc-${extraPc.offset}`]: [])
         ]
       }
     }
@@ -98,24 +98,7 @@
   }
   .offset-loop(@span, 1);
 
-  @media (max-width: 576px) {
-    .col-loop(@len, @i:1) when (@i <= @len) {
-      .fe-col-phone-@{i} {
-        width: (@i / 24px) * 100%;
-      }
-      .col-loop(@len, (@i + 1));
-    }
-    .col-loop(@span, 1);
-    .offset-loop(@len, @i:1) when (@i <= @len) {
-      .fe-offset-phone-@{i} {
-        margin-left: (@i / 24px) * 100%;
-      }
-      .offset-loop(@len, (@i + 1));
-    }
-    .offset-loop(@span, 1);
-  }
-
-  @media (min-width: 577px) and (max-width: 758px) {
+  @media (min-width: 577px) {
     .col-loop(@len, @i:1) when (@i <= @len) {
       .fe-col-ipad-@{i} {
         width: (@i / 24px) * 100%;
@@ -132,7 +115,7 @@
     .offset-loop(@span, 1);
   }
 
-  @media (min-width: 759px) and (max-width: 992px) {
+  @media (min-width: 759px) {
     .col-loop(@len, @i:1) when (@i <= @len) {
       .fe-col-narrowPc-@{i} {
         width: (@i / 24px) * 100%;
@@ -149,7 +132,7 @@
     .offset-loop(@span, 1);
   }
 
-  @media (min-width: 993px) and (max-width: 1200px) {
+  @media (min-width: 993px) {
     .col-loop(@len, @i:1) when (@i <= @len) {
       .fe-col-pc-@{i} {
         width: (@i / 24px) * 100%;
@@ -176,6 +159,23 @@
     .col-loop(@span, 1);
     .offset-loop(@len, @i:1) when (@i <= @len) {
       .fe-offset-widePc-@{i} {
+        margin-left: (@i / 24px) * 100%;
+      }
+      .offset-loop(@len, (@i + 1));
+    }
+    .offset-loop(@span, 1);
+  }
+
+  @media (min-width: 1601px) {
+    .col-loop(@len, @i:1) when (@i <= @len) {
+      .fe-col-extraPc-@{i} {
+        width: (@i / 24px) * 100%;
+      }
+      .col-loop(@len, (@i + 1));
+    }
+    .col-loop(@span, 1);
+    .offset-loop(@len, @i:1) when (@i <= @len) {
+      .fe-offset-extraPc-@{i} {
         margin-left: (@i / 24px) * 100%;
       }
       .offset-loop(@len, (@i + 1));
