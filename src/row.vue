@@ -40,10 +40,10 @@
       justify-content: flex-start;
     }
     &.align-right {
-      justify-content: center;
+      justify-content: flex-end;
     }
     &.align-center {
-      justify-content: flex-end;
+      justify-content: center;
     }
   }
 </style>

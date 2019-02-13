@@ -21,10 +21,6 @@
     props: {
       span: Number | String,
       offset: Number | String,
-      phone: {
-        type: Object,
-        validator
-      },
       ipad: {
         type: Object,
         validator
@@ -38,6 +34,10 @@
         validator
       },
       widePc: {
+        type: Object,
+        validator
+      },
+      extraPc: {
         type: Object,
         validator
       }
