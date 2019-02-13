@@ -47,6 +47,17 @@
         gutter: 0
       }
     },
+
+    methods: {
+      createClasses(obj, str) {
+        let array = []
+        if (!obj) return array
+        if (obj.span) { array.push(`fe-col-${str}${obj.span}`) }
+        if (obj.offset) { array.push(`fe-offset-${str}${obj.offset}`) }
+        return array
+      }
+    },
+
     computed: {
       colStyle() {
         let {gutter} = this
@@ -56,19 +67,14 @@
       },
       colClass() {
         let {span, offset, ipad, narrowPc, pc, widePc, extraPc} = this
+        const createClasses = this.createClasses
         return [
-          span && `fe-col-${span}`,
-          offset && `fe-offset-${offset}`,
-          ...(ipad ? [span && `fe-col-ipad-${ipad.span}`]: []),
-          ...(ipad ? [offset && `fe-col-ipad-${ipad.offset}`]: []),
-          ...(narrowPc ? [span && `fe-col-narrowPc-${narrowPc.span}`]: []),
-          ...(narrowPc ? [offset && `fe-col-narrowPc-${narrowPc.offset}`]: []),
-          ...(pc ? [span && `fe-col-pc-${pc.span}`]: []),
-          ...(pc ? [offset && `fe-col-pc-${pc.offset}`]: []),
-          ...(widePc ? [span && `fe-col-widePc-${widePc.span}`]: []),
-          ...(widePc ? [offset && `fe-col-widePc-${widePc.offset}`]: []),
-          ...(extraPc ? [span && `fe-col-extraPc-${extraPc.span}`]: []),
-          ...(extraPc ? [offset && `fe-col-extraPc-${extraPc.offset}`]: [])
+          ...createClasses({span, offset}, ''),
+          ...createClasses(ipad, 'ipad-'),
+          ...createClasses(narrowPc, 'narrowPc-'),
+          ...createClasses(pc, 'pc-'),
+          ...createClasses(widePc, 'widePc-'),
+          ...createClasses(extraPc, 'extraPc-')
         ]
       }
     }
