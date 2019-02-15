@@ -9,5 +9,7 @@ export default {}
 </script>
 
 <style scoped lang="less">
-.fe-layout {}
+.fe-layout {
+  display: flex;
+}
 </style>
