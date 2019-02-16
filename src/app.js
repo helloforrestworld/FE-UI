@@ -36,8 +36,18 @@ new Vue({
     }
   },
   methods: {
-    showToast(mes) {
-      this.$toast(mes)
+    showToast(message, options) {
+      this.$toast(message, options)
+    },
+    hasCallBack() {
+      this.showToast('可执行回调', {
+        closeBtn: {
+          text: '回调',
+          callback() {
+            alert('执行回调！')
+          }
+        }
+      })
     }
   }
 })

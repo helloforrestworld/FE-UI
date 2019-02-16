@@ -167,9 +167,12 @@
       </div>
 
       <div class="box">
-          <h2>Toast</h2>
-          <fe-button @click="showToast('Toast,和 hi hi 啊是')">ShowToast</fe-button>
-        </div>
+        <h2>Toast</h2>
+        <fe-button @click="showToast('普通Toast')">普通Toast</fe-button>
+        <fe-button @click="showToast('1秒后收起', {duration: 1000})">1秒后收起</fe-button>
+        <fe-button @click="showToast('手动关闭', {autoClose: false})">手动关闭</fe-button>
+        <fe-button @click="hasCallBack">执行回调</fe-button>
+      </div>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_913020_82ib72tavcm.js"></script>
