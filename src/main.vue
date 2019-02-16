@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'fe-main'
+}
 </script>
 
 <style scoped lang="less">

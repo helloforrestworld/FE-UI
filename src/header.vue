@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'fe-header'
+}
 </script>
 
 <style scoped lang="less">

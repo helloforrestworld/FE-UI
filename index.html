@@ -11,6 +11,9 @@
       }
       :root {
         --font-size: 14px;
+        --deep-blue: #198ee7;
+        --blue: #7ebce7;
+        --sky-blue: #3d9fe5;
       }
       #app {
         margin: 20px;
@@ -42,6 +45,24 @@
       }
       .row-box .fe-row .fe-col:nth-child(2n) .col-inner {
         background: #7CB8FF;
+      }
+      .row-box section {
+        min-height: 100px;
+        font-size: 18px;
+        color: #fff;
+      }
+      .row-box .fe-aside {
+        background: var(--sky-blue);
+        width: 200px;
+      }
+      .row-box .fe-header {
+        background: var(--blue);
+      }
+      .row-box .fe-main {
+        background: var(--deep-blue);
+      }
+      .row-box .fe-footer {
+        background: var(--blue);
       }
     </style>
   </head>
@@ -121,6 +142,30 @@
         </div>
       </div>
 
+      <div class="box">
+        <h2>基础布局</h2>
+        <div class="row-box">
+          <fe-layout>
+            <fe-header>Header</fe-header>
+            <fe-main>Main</fe-main>
+            <fe-footer>Footer</fe-footer>
+          </fe-layout>
+        </div>
+      </div>
+      <div class="box">
+        <div class="row-box">
+          <fe-layout>
+            <fe-header>Header</fe-header>
+            <fe-layout>
+              <fe-aside>Aside</fe-aside>
+              <fe-layout>
+                <fe-main>Main</fe-main>
+                <fe-footer>Footer</fe-footer>
+              </fe-layout>
+            </fe-layout>
+          </fe-layout>
+        </div>
+      </div>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_913020_82ib72tavcm.js"></script>
