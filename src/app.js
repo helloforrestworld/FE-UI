@@ -11,6 +11,8 @@ import Main from './main'
 import Footer from './footer'
 import Aside from './aside'
 
+import plugin from './plugin'
+
 Vue.component('fe-button', Button)
 Vue.component('fe-button-group', ButtonGroup)
 Vue.component('fe-icon', Icon)
@@ -24,6 +26,8 @@ Vue.component('fe-main', Main)
 Vue.component('fe-footer', Footer)
 Vue.component('fe-aside', Aside)
 
+Vue.use(plugin)
+
 new Vue({
   el: '#app',
   data() {
@@ -31,5 +35,9 @@ new Vue({
       loading1: false
     }
   },
-  methods: {}
+  methods: {
+    showToast(mes) {
+      this.$toast(mes)
+    }
+  }
 })
