@@ -28,7 +28,7 @@ export default {
 .fe-layout {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex-grow: 1;
   &.hasAside {
     flex-direction: row;
   }

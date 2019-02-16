@@ -1,12 +1,28 @@
 <template>
-  <section class="fe-aside">
+  <section class="fe-aside" :style="asideStyle">
     <slot></slot>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'fe-aside'
+  name: 'fe-aside',
+  data() {
+    return {}
+  },
+  props: {
+    width: {
+      type: Number || String,
+      default: 200
+    }
+  },
+  computed: {
+    asideStyle() {
+      return {
+        width: this.width + 'px'
+      }
+    }
+  }
 }
 </script>
 
