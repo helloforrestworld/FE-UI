@@ -1,6 +1,6 @@
 <template>
   <div class="fe-tabs-body">
-
+    <slot></slot>
   </div>
 </template>
 

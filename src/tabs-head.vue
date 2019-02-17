@@ -1,6 +1,6 @@
 <template>
-  <div class="fe-tabs-header">
-
+  <div class="fe-tabs-head">
+    <slot></slot>
   </div>
 </template>
 
@@ -9,6 +9,6 @@ export default {}
 </script>
 
 <style scoped lang="less">
-.fe-tabs-header {
+.fe-tabs-head {
 }
 </style>

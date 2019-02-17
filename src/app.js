@@ -10,6 +10,11 @@ import Header from './header'
 import Main from './main'
 import Footer from './footer'
 import Aside from './aside'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsSpan from './tabs-span'
+import TabsBody from './tabs-body'
+import TabsPanel from './tabs-panel'
 
 import plugin from './plugin'
 
@@ -26,13 +31,20 @@ Vue.component('fe-main', Main)
 Vue.component('fe-footer', Footer)
 Vue.component('fe-aside', Aside)
 
+Vue.component('fe-tabs', Tabs)
+Vue.component('fe-tabs-head', TabsHead)
+Vue.component('fe-tabs-span', TabsSpan)
+Vue.component('fe-tabs-body', TabsBody)
+Vue.component('fe-tabs-panel', TabsPanel)
+
 Vue.use(plugin)
 
 new Vue({
   el: '#app',
   data() {
     return {
-      loading1: false
+      loading1: false,
+      selectTab: '1'
     }
   },
   methods: {
