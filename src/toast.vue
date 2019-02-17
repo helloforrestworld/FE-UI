@@ -1,7 +1,8 @@
 <template>
-  <div class="fe-toast">
-    <slot></slot>
-    <div class="fe-toast-line"></div>
+  <div class="fe-toast" ref="wrapper" :class="toastClass">
+    <div class="fe-message" v-if="enableHtml" v-html="$slots.default[0]"></div>
+    <div class="fe-message" v-else>{{$slots.default[0]}}</div>
+    <div class="fe-toast-line" ref="line"></div>
     <span class="fe-toast-close" v-if="this.showClose" @click="handleCloseClick">
       {{closeBtn.text}}
     </span>
@@ -31,24 +32,50 @@ export default {
           callback: () => {}
         }
       }
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false
+    },
+    position: {
+      type: String,
+      default: 'top',
+      validator(value) {
+        return ['top', 'middle', 'bottom'].indexOf(value) !== -1
+      }
     }
   },
   mounted() {
-    console.log(this.$props)
-    if (this.autoClose) {
-      setTimeout(() => {
-        this.close()
-      }, this.duration)
+    this.updateStyle()
+    this.initAutoClose()
+  },
+  computed: {
+    toastClass() {
+      return {
+        [`position-${this.position}`] : true
+      }
     }
   },
   methods: {
-    close() {
-      this.$el.remove()
-      this.$destroy()
+    initAutoClose() {
+      if (this.autoClose) {
+        setTimeout(() => {
+          this.close()
+        }, this.duration)
+      }
+    },
+    updateStyle() {
+      this.$nextTick(() => {
+        this.$refs.line.style.height = this.$refs.wrapper.getBoundingClientRect().height + 'px'
+      })
     },
     handleCloseClick() {
       this.close()
-      this.closeBtn.callback()
+      typeof this.closeBtn.callback === 'function' && this.closeBtn.callback()
+    },
+    close() {
+      this.$el.remove()
+      this.$destroy()
     }
   }
 }
@@ -61,7 +88,7 @@ export default {
 @toast-font-color: #fff;
 @toast-bg: rgba(0, 0, 0, 0.75);
 .fe-toast {
-  height: @toast-height;
+  min-height: @toast-height;
   color: @toast-font-color;
   font-size: @toast-font-size;
   line-height: @toast-line-height;
@@ -72,19 +99,33 @@ export default {
   align-items: center;
   position: fixed;
   left: 50%;
-  top: 0;
-  transform: translateX(-50%);
   padding: 0 16px;
+  &.position-top {
+    top: 0;
+    transform: translateX(-50%);
+  }
+  &.position-bottom {
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  &.position-middle {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .fe-message {
+    padding: 6px 0;
+  }
   .fe-toast-line {
-    margin: 0 6px;
-    height: 100%;
+    flex-shrink: 0;
+    margin-left: 16px;
     width: 1px;
     background: #666;
   }
   .fe-toast-close {
+    flex-shrink: 0;
     cursor: pointer;
     position: relative;
-    padding-left: 10px;
+    margin-left: 16px;
   }
 }
 </style>

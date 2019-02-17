@@ -172,6 +172,9 @@
         <fe-button @click="showToast('1秒后收起', {duration: 1000})">1秒后收起</fe-button>
         <fe-button @click="showToast('手动关闭', {autoClose: false})">手动关闭</fe-button>
         <fe-button @click="hasCallBack">执行回调</fe-button>
+        <fe-button @click="showToast('<em>自定义内容</em>', {enableHtml: true})">自定义内容</fe-button>
+        <fe-button @click="showToast('屏幕中部', {position: 'middle'})">屏幕中部</fe-button>
+        <fe-button @click="showToast('屏幕中部', {position: 'bottom'})">屏幕底部</fe-button>
       </div>
     </div>
     <script src="./src/app.js"></script>
