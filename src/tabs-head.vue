@@ -1,6 +1,7 @@
 <template>
   <div class="fe-tabs-head">
     <slot></slot>
+    <slot name="actions"></slot>
   </div>
 </template>
 
@@ -10,5 +11,6 @@ export default {}
 
 <style scoped lang="less">
 .fe-tabs-head {
+  display: flex;
 }
 </style>

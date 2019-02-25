@@ -181,9 +181,14 @@
         <h2>Tabs</h2>
         <fe-tabs :select.sync="selectTab">
           <fe-tabs-head>
-            <fe-tabs-span name="1">前端</fe-tabs-span>
+            <fe-tabs-span name="1" disabled>
+              <fe-icon name="set"></fe-icon>前端
+            </fe-tabs-span>
             <fe-tabs-span name="2">后端</fe-tabs-span>
             <fe-tabs-span name="3">全栈</fe-tabs-span>
+            <template slot="actions">
+              <fe-button>按钮</fe-button>
+            </template>
           </fe-tabs-head>
           <fe-tabs-body>
             <fe-tabs-panel name="1">javascript大法哈皮</fe-tabs-panel>

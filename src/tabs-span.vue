@@ -5,7 +5,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
 </script>
 
 <style scoped lang="less">
