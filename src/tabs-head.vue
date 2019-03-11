@@ -6,11 +6,15 @@
 </template>
 
 <script>
-export default {}
-</script>
-
-<style scoped lang="less">
-.fe-tabs-head {
-  display: flex;
+export default {
+  inject: ['eventBus'],
+  created() {
+    this.eventBus.$on('update:selected', (name) => {
+      console.log('tabs-head says:' + name + 'has been selected')
+    })
+  }
 }
+</script>
+<style scoped lang="less">
+.fe-tabs-head { display: flex; }
 </style>
