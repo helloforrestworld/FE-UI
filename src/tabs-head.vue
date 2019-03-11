@@ -16,11 +16,13 @@ export default {
 }
 </script>
 <style scoped lang="less">
+@height: 40px;
 .fe-tabs-head {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border: 1px solid red;
+  height: @height;
   & > .actions-wrapper {
     margin-left: auto;
   }

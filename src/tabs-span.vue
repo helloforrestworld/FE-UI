@@ -45,8 +45,11 @@ export default {
 <style scoped lang="less">
 .fe-tabs-span {
   cursor: pointer;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
   padding: 0 1em;
+  height: 100%;
   &.active {
     background: red;
   }
