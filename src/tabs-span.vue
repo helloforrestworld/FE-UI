@@ -1,5 +1,5 @@
 <template>
-  <div class="fe-tabs-span" @click="xxx">
+  <div class="fe-tabs-span" :class="classes" @click="xxx">
     <slot></slot>
   </div>
 </template>
@@ -17,10 +17,22 @@ export default {
     }
   },
   inject: ['eventBus'],
+  data() {
+    return {
+      active: false
+    }
+  },
   created() {
     this.eventBus.$on('update:selected', (name) => {
-      console.log('tabs-span says:' + name + 'has been selected')
+      this.active = this.name === name
     })
+  },
+  computed: {
+    classes() {
+      return {
+        active: this.active
+      }
+    }
   },
   methods: {
     xxx() {
@@ -33,5 +45,10 @@ export default {
 <style scoped lang="less">
 .fe-tabs-span {
   cursor: pointer;
+  flex-shrink: 0;
+  padding: 0 1em;
+  &.active {
+    background: red;
+  }
 }
 </style>

@@ -36,13 +36,17 @@ export default {
 
   created() {
     this.eventBus.$on('update:selected', (name) => {
-      console.log('tabs says:' + name + 'has been selected')
+      // this.tabItem(name)
     })
   },
 
+  mounted() {
+    this.eventBus.$emit('update:selected', this.selected)
+  },
+
   methods: {
-    tabItem() {
-      this.$emit('update:selected', 'xxx')
+    tabItem(name) {
+      this.$emit('update:selected', name)
     }
   }
 }
@@ -50,5 +54,6 @@ export default {
 
 <style scoped lang="less">
 .fe-tabs {
+
 }
 </style>
