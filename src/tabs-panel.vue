@@ -35,8 +35,6 @@ export default {
 
 <style scoped lang="less">
 .fe-tabs-panel {
-  &.active {
-    background: red;
-  }
+  padding: 1em;
 }
 </style>

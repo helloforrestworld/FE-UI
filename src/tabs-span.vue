@@ -36,13 +36,14 @@ export default {
   },
   methods: {
     xxx() {
-      this.eventBus.$emit('update:selected', this.name)
+      this.eventBus.$emit('update:selected', this.name, this)
     }
   }
 }
 </script>
 
 <style scoped lang="less">
+@blue: #1c98ea;
 .fe-tabs-span {
   cursor: pointer;
   display: flex;
@@ -51,7 +52,7 @@ export default {
   padding: 0 1em;
   height: 100%;
   &.active {
-    background: red;
+    color: @blue;
   }
 }
 </style>
