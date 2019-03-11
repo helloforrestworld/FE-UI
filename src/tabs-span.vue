@@ -1,5 +1,5 @@
 <template>
-  <div class="fe-tabs-span" :class="classes" @click="xxx">
+  <div class="fe-tabs-span" :class="classes" @click="onClick">
     <slot></slot>
   </div>
 </template>
@@ -30,12 +30,14 @@ export default {
   computed: {
     classes() {
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       }
     }
   },
   methods: {
-    xxx() {
+    onClick() {
+      if (this.disabled) return
       this.eventBus.$emit('update:selected', this.name, this)
     }
   }
@@ -44,6 +46,7 @@ export default {
 
 <style scoped lang="less">
 @blue: #1c98ea;
+@disabled-text: grey;
 .fe-tabs-span {
   cursor: pointer;
   display: flex;
@@ -53,6 +56,10 @@ export default {
   height: 100%;
   &.active {
     color: @blue;
+  }
+  &.disabled {
+    color: @disabled-text;
+    cursor: not-allowed;
   }
 }
 </style>
