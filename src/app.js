@@ -47,6 +47,11 @@ new Vue({
       selectTab: 'fontend'
     }
   },
+  watch: {
+    selectTab(newVal) {
+      console.log(newVal)
+    }
+  },
   methods: {
     showToast(message, options) {
       this.$toast(message, options)

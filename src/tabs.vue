@@ -36,7 +36,7 @@ export default {
 
   created() {
     this.eventBus.$on('update:selected', (name) => {
-      // this.tabItem(name)
+      this.tabItem(name)
     })
   },
 
