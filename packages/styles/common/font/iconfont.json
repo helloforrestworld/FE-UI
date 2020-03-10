@@ -1,0 +1,79 @@
+{
+  "id": "913020",
+  "name": "FE-UI",
+  "font_family": "iconfont",
+  "css_prefix_text": "i-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1495226",
+      "name": "info",
+      "font_class": "info",
+      "unicode": "e6e8",
+      "unicode_decimal": 59112
+    },
+    {
+      "icon_id": "6050509",
+      "name": "error",
+      "font_class": "error",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "1617822",
+      "name": "1114加载中",
+      "font_class": "loading",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "109733",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "1222026",
+      "name": "arrow-left",
+      "font_class": "left",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    },
+    {
+      "icon_id": "1222030",
+      "name": "arrow-right",
+      "font_class": "right",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "1305407",
+      "name": "下",
+      "font_class": "down",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "606296",
+      "name": "左",
+      "font_class": "back",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "666885",
+      "name": "设置",
+      "font_class": "set",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "3050821",
+      "name": "点赞",
+      "font_class": "like",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    }
+  ]
+}

@@ -23,6 +23,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
     "postcss-salad": "^2.0.1",
     "precss": "^4.0.0",
     "vue-template-compiler": "^2.6.11"
@@ -42,27 +44,6 @@
     "rules": {}
   },
   "postcss": {
-    "plugins": {
-      "postcss-salad": {
-        "browsers": [
-          "> 1%",
-          "last 2 versions"
-        ],
-        "features": {
-          "bem": {
-            "shortcuts": {
-              "component": "b",
-              "descendent": "e",
-              "modifier": "m"
-            },
-            "separators": {
-              "descendent": "__",
-              "modifier": "--"
-            }
-          }
-        }
-      }
-    }
   },
   "browserslist": [
     "> 1%",
