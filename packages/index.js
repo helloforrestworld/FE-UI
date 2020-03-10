@@ -1,10 +1,20 @@
 import Button from './button'
 import ButtonGroup from './button-group'
+import Layout from './layout'
+import Main from './main'
+import Header from './header'
+import Aside from './aside'
+import Footer from './footer'
 
 // 所有组件列表
 const components = {
   Button,
-  ButtonGroup
+  ButtonGroup,
+  Layout,
+  Main,
+  Header,
+  Aside,
+  Footer
 }
 
 const install = function (Vue) {
