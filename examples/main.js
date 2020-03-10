@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import '../packages/styles/index.css'
+import FeUI from '../packages/'
+import '../packages/styles/index.less'
 
+Vue.use(FeUI)
 Vue.config.productionTip = false
 
 new Vue({

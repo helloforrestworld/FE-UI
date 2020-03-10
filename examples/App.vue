@@ -1,26 +1,20 @@
 <template>
   <div id="app">
-      <FeButton />
+      <FeButtonGroup>
+        <FeButton>按钮1</FeButton>
+        <FeButton :loading="loading" iconPosition="right">按钮2</FeButton>
+        <FeButton>按钮3</FeButton>
+      </FeButtonGroup>
   </div>
 </template>
 
 <script>
-import { Button } from '../packages/'
 export default {
   name: 'App',
-  components: {
-    FeButton: Button
+  data () {
+    return {
+      loading: true
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
