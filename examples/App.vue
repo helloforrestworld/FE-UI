@@ -1,13 +1,6 @@
 <template>
   <div id="app">
     <div class="demo-container">
-      <FeButtonGroup>
-        <FeButton>按钮1</FeButton>
-        <FeButton :loading="loading" iconPosition="right">按钮2</FeButton>
-        <FeButton>按钮3</FeButton>
-      </FeButtonGroup>
-    </div>
-    <div class="demo-container">
       <FeLayout>
         <FeHeader>header</FeHeader>
         <FeLayout>
@@ -47,6 +40,22 @@
           </div>
         </FeCol>
       </FeRow>
+    </div>
+    <div class="demo-container">
+      <FeButtonGroup>
+        <FeButton>按钮1</FeButton>
+        <FeButton :loading="loading" iconPosition="right">按钮2</FeButton>
+        <FeButton>按钮3</FeButton>
+      </FeButtonGroup>
+    </div>
+    <div class="demo-container">
+      <FeInput placeholder="输入框"/>
+    </div>
+    <div class="demo-container">
+      <FeInput placeholder="输入框" error="出错了"/>
+    </div>
+    <div class="demo-container">
+      <FeInput placeholder="输入框" disabled/>
     </div>
   </div>
 </template>

@@ -7,6 +7,7 @@ import Aside from './aside'
 import Footer from './footer'
 import Row from './row'
 import Col from './col'
+import Input from './input'
 
 // 所有组件列表
 const components = {
@@ -18,7 +19,8 @@ const components = {
   Aside,
   Footer,
   Row,
-  Col
+  Col,
+  Input
 }
 
 const install = function (Vue) {

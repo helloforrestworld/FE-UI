@@ -1,0 +1,38 @@
+.fe-input {
+  display: inline-flex;
+  align-items: center;
+  font-size: @font-size;
+  > *:not(:last-child) {
+    margin-right: 0.5em;
+  }
+  > input {
+    height: @height;
+    padding: 0 8px;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    font-size: @font-size;
+    &:hover {
+      border-color: @border-color-hover;
+    }
+    &:focus {
+      box-shadow: inset 1px 1px 3px @box-shadow-color, inset -1px -1px 3px @box-shadow-color;
+      outline: none;
+    }
+    &[disabled] {
+      border-color: @border-color-disable;
+      color: @border-color-disable;
+      cursor: not-allowed;
+    }
+  }
+  &--error {
+    > input {
+      border-color: @red;
+    }
+    > .fe-input__error-msg {
+      color: @red;
+    }
+    > .fe-input__error-icon {
+      color: @red;
+    }
+  }
+}
