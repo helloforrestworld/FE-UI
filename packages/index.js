@@ -5,6 +5,8 @@ import Main from './main'
 import Header from './header'
 import Aside from './aside'
 import Footer from './footer'
+import Row from './row'
+import Col from './col'
 
 // 所有组件列表
 const components = {
@@ -14,7 +16,9 @@ const components = {
   Main,
   Header,
   Aside,
-  Footer
+  Footer,
+  Row,
+  Col
 }
 
 const install = function (Vue) {

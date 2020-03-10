@@ -1,0 +1,106 @@
+// 单行网格数
+@span: 24;
+.fe-col {
+  min-height: 36px;
+}
+// 批量生成 .fe-col-1 ~~ .fe-col-24
+.col-loop(@len, @i:1) when (@i <= @len) {
+  .fe-col-@{i} {
+    width: (@i / 24px) * 100%;
+  }
+  .col-loop(@len, (@i + 1));
+}
+.col-loop(@span, 1);
+// 批量生成 .fe-offset-1 ~~ .fe-offset-24
+.offset-loop(@len, @i:1) when (@i <= @len) {
+  .fe-offset-@{i} {
+    margin-left: (@i / 24px) * 100%;
+  }
+  .offset-loop(@len, (@i + 1));
+}
+.offset-loop(@span, 1);
+
+@media (min-width: 577px) {
+  .col-loop(@len, @i:1) when (@i <= @len) {
+    .fe-col-ipad-@{i} {
+      width: (@i / 24px) * 100%;
+    }
+    .col-loop(@len, (@i + 1));
+  }
+  .col-loop(@span, 1);
+  .offset-loop(@len, @i:1) when (@i <= @len) {
+    .fe-offset-ipad-@{i} {
+      margin-left: (@i / 24px) * 100%;
+    }
+    .offset-loop(@len, (@i + 1));
+  }
+  .offset-loop(@span, 1);
+}
+
+@media (min-width: 759px) {
+  .col-loop(@len, @i:1) when (@i <= @len) {
+    .fe-col-narrowPc-@{i} {
+      width: (@i / 24px) * 100%;
+    }
+    .col-loop(@len, (@i + 1));
+  }
+  .col-loop(@span, 1);
+  .offset-loop(@len, @i:1) when (@i <= @len) {
+    .fe-offset-narrowPc-@{i} {
+      margin-left: (@i / 24px) * 100%;
+    }
+    .offset-loop(@len, (@i + 1));
+  }
+  .offset-loop(@span, 1);
+}
+
+@media (min-width: 993px) {
+  .col-loop(@len, @i:1) when (@i <= @len) {
+    .fe-col-pc-@{i} {
+      width: (@i / 24px) * 100%;
+    }
+    .col-loop(@len, (@i + 1));
+  }
+  .col-loop(@span, 1);
+  .offset-loop(@len, @i:1) when (@i <= @len) {
+    .fe-offset-pc-@{i} {
+      margin-left: (@i / 24px) * 100%;
+    }
+    .offset-loop(@len, (@i + 1));
+  }
+  .offset-loop(@span, 1);
+}
+
+@media (min-width: 1201px) {
+  .col-loop(@len, @i:1) when (@i <= @len) {
+    .fe-col-widePc-@{i} {
+      width: (@i / 24px) * 100%;
+    }
+    .col-loop(@len, (@i + 1));
+  }
+  .col-loop(@span, 1);
+  .offset-loop(@len, @i:1) when (@i <= @len) {
+    .fe-offset-widePc-@{i} {
+      margin-left: (@i / 24px) * 100%;
+    }
+    .offset-loop(@len, (@i + 1));
+  }
+  .offset-loop(@span, 1);
+}
+
+@media (min-width: 1601px) {
+  .col-loop(@len, @i:1) when (@i <= @len) {
+    .fe-col-extraPc-@{i} {
+      width: (@i / 24px) * 100%;
+    }
+    .col-loop(@len, (@i + 1));
+  }
+  .col-loop(@span, 1);
+  .offset-loop(@len, @i:1) when (@i <= @len) {
+    .fe-offset-extraPc-@{i} {
+      margin-left: (@i / 24px) * 100%;
+    }
+    .offset-loop(@len, (@i + 1));
+  }
+  .offset-loop(@span, 1);
+}
