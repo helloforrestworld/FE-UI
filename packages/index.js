@@ -9,6 +9,12 @@ import Row from './row'
 import Col from './col'
 import Input from './input'
 
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsSpan from './tabs-span'
+import TabsBody from './tabs-body'
+import TabsPanel from './tabs-panel'
+
 // 所有组件列表
 const components = {
   Button,
@@ -20,7 +26,12 @@ const components = {
   Footer,
   Row,
   Col,
-  Input
+  Input,
+  Tabs,
+  TabsHead,
+  TabsSpan,
+  TabsBody,
+  TabsPanel
 }
 
 const install = function (Vue) {

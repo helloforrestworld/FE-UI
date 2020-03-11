@@ -57,6 +57,26 @@
     <div class="demo-container">
       <FeInput placeholder="输入框" disabled/>
     </div>
+    <div class="demo-container">
+      <FeTabs :selected="selected">
+        <FeTabsHead>
+          <FeTabsSpan name="name1">蝙蝠</FeTabsSpan>
+          <FeTabsSpan name="name2">穿山甲</FeTabsSpan>
+          <FeTabsSpan disabled name="name3">满汉全席野味</FeTabsSpan>
+        </FeTabsHead>
+        <FeTabsBody>
+          <FeTabsPanel name="name1">
+            蝙蝠🦇
+          </FeTabsPanel>
+          <FeTabsPanel name="name2">
+            穿山甲
+          </FeTabsPanel>
+          <FeTabsPanel name="name3">
+            想啥呢？
+          </FeTabsPanel>
+        </FeTabsBody>
+      </FeTabs>
+    </div>
   </div>
 </template>
 
@@ -65,7 +85,8 @@ export default {
   name: 'App',
   data () {
     return {
-      loading: true
+      loading: true,
+      selected: 'name1'
     }
   }
 }

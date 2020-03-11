@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: 'https://helloforrestworld.github.io/FE-UI/dist/',
+  publicPath: process.env.NODE_ENV === 'production' ? 'https://helloforrestworld.github.io/FE-UI/dist/' : '',
   pages: {
     index: {
       entry: 'examples/main.js'
