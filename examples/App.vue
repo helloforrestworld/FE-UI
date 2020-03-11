@@ -77,6 +77,13 @@
         </FeTabsBody>
       </FeTabs>
     </div>
+    <div class="demo-container">
+      <FeButton class="mr10" @click="$toast('默认消息提醒')">默认消息提醒</FeButton>
+      <FeButton class="mr10" @click="$toast('不显示关闭按钮', { showClose: false })">不显示关闭按钮</FeButton>
+      <FeButton class="mr10" @click="$toast('底部消息提醒', { position: 'bottom' })">底部消息提醒</FeButton>
+      <FeButton class="mr10" @click="$toast('中间消息提醒', { position: 'middle' })">中间消息提醒</FeButton>
+      <FeButton class="mr10" @click="showToast">插入html</FeButton>
+    </div>
   </div>
 </template>
 
@@ -88,6 +95,11 @@ export default {
       loading: true,
       selected: 'name1'
     }
+  },
+  methods: {
+    showToast () {
+      this.$toast('<span style="color: red">插入html</span>', { enableHtml: true })
+    }
   }
 }
 </script>
@@ -95,6 +107,9 @@ export default {
 .demo-container {
   width: 60%;
   margin: 20px 0;
+  .mr10 {
+    margin-right: 10px;
+  }
   .fe-layout {
     color: #fff;
   }

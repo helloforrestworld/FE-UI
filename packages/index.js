@@ -1,13 +1,17 @@
 import Button from './button'
 import ButtonGroup from './button-group'
+
 import Layout from './layout'
 import Main from './main'
 import Header from './header'
 import Aside from './aside'
 import Footer from './footer'
+
 import Row from './row'
 import Col from './col'
+
 import Input from './input'
+import Toast, { registerToast } from './Toast/plugin'
 
 import Tabs from './tabs'
 import TabsHead from './tabs-head'
@@ -34,6 +38,10 @@ const components = {
   TabsPanel
 }
 
+const pluginComponent = {
+  Toast
+}
+
 const install = function (Vue) {
   // 判断是否安装，安装过就不继续往下执行
   if (install.installed) return
@@ -44,9 +52,12 @@ const install = function (Vue) {
     if (typeof cmp === 'undefined' || !cmp.name) return
     Vue.component(cmp.name, cmp)
   })
+  // 注册Toast插件
+  registerToast(Vue)
 }
 
 export default {
   install,
-  ...components
+  ...components,
+  ...pluginComponent
 }
