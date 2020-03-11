@@ -9,8 +9,6 @@ yarn add fe-vue-ui
 npm i fe-vue-ui
 ```
 
-****
-
 ## 使用
 
 **全局引入**
