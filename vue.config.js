@@ -4,5 +4,6 @@ module.exports = {
     index: {
       entry: 'examples/main.js'
     }
-  }
+  },
+  productionSourceMap: false
 }

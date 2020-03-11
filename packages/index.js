@@ -56,6 +56,10 @@ const install = function (Vue) {
   registerToast(Vue)
 }
 
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
 export default {
   install,
   ...components,
