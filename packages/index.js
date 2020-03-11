@@ -11,7 +11,7 @@ import Row from './row'
 import Col from './col'
 
 import Input from './input'
-import Toast, { registerToast } from './Toast/plugin'
+import Toast, { registerToast } from './toast/plugin'
 
 import Tabs from './tabs'
 import TabsHead from './tabs-head'
